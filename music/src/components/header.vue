@@ -1,5 +1,5 @@
 <template>
-  <div class="header">
+  <div class="header" >
     <div class="header-icon" @click="leftEvent">
       <slot name="left-icon"></slot>
     </div>
@@ -19,7 +19,10 @@ export default {
     return {}
   },
   methods: {
-    leftEvent () {}
+    leftEvent () {
+      this.$store.dispatch('setShowSidebar', true)
+    },
+    
   }
 }
 </script>
