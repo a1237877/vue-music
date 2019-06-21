@@ -1,7 +1,7 @@
 //封装toast组件
 let Toast = {}
 // key:value
-Toast.install = function(Vue,options){
+Toast.install = function(Vue,options){ 
   let opt = {
     //报错时的操作
     defaultType:'center', //默认显示的位置

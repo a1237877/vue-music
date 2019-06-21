@@ -6,6 +6,7 @@ import router from './router'
 import FastClick from 'fastclick'
 import VueLazyload from 'vue-lazyload'
 import store from './vuex/store'
+import '../static/css/reset.styl'
 
 Vue.use(VueLazyload)
  
@@ -16,7 +17,7 @@ Vue.use(VueLazyload, {
   loading: '../static/img/loading.gif',
   // attempt: 1
 })
-
+ 
 FastClick.attach(document.body);
 
 Vue.config.productionTip = false
