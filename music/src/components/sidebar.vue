@@ -3,9 +3,12 @@
     <div class="sidebar-con" :class="{showbar: showSidebar}">
       <div class="head">
         <div class="avatar">
-          <img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1919326320,3728667730&fm=26&gp=0.jpg" alt="">
+          <img
+            src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1561035648&di=9591a646b3ebdc264e1befbddf028c9a&src=http://img5.duitang.com/uploads/item/201510/17/20151017090149_RZCES.thumb.700_0.jpeg"
+            alt
+          >
         </div>
-        <div class="name">蜗牛</div>
+        <div class="name">Tastel</div>
       </div>
       <div class="menu">
         <ul>
@@ -16,31 +19,31 @@
             </router-link>
           </li>
           <li>
-            <router-link to="" @click="_hidebar">
+            <router-link to @click="_hidebar">
               <i class="icon">&#xe631;</i>
               <span>音效调整</span>
             </router-link>
           </li>
           <li>
-            <router-link to="" @click="_hidebar">
+            <router-link to @click="_hidebar">
               <i class="icon">&#xe65b;</i>
               <span>定时关闭</span>
             </router-link>
           </li>
           <li>
-            <router-link to="" @click="_hidebar">
+            <router-link to @click="_hidebar">
               <i class="icon">&#xe601;</i>
               <span>听歌识曲</span>
             </router-link>
           </li>
           <li>
-            <router-link to="" @click="_hidebar">
+            <router-link to @click="_hidebar">
               <i class="icon">&#xe600;</i>
               <span>帮助</span>
             </router-link>
           </li>
           <li>
-            <router-link to="" @click="_hidebar">
+            <router-link to @click="_hidebar">
               <i class="icon">&#xe61f;</i>
               <span>设置</span>
             </router-link>
@@ -55,8 +58,14 @@
 <script>
 import { mapGetters } from 'vuex'
 export default {
-  data () {
+  data() {
     return {
+
+    };
+  },
+  methods: {
+    _hidebar() {
+      this.$store.dispatch('setShowSidebar', false)   // dispatch() 用来调用action里的方法
     }
   },
   computed: {
@@ -64,17 +73,12 @@ export default {
       'showSidebar'
     ])
   },
-  methods: {
-    _hidebar () {
-      console.log(123)
-      this.$store.dispatch('setShowSidebar', false)
-    }
-  }
-}
+};
 </script>
 
 <style lang="stylus" scoped>
-@import "../assets/css/function"
+@import '../assets/css/function';
+
 .sidebar 
   color #e8e8e8
   .sidebar-con 

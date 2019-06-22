@@ -1,41 +1,44 @@
 <template>
   <div id="app">
     <!-- 头部header -->
-    <v-header>
+    <hd>
       <i slot="left-icon" class="icon">&#xe692;</i>
-      <span slot="content">Magic Music</span>
+      <span slot="content" class="icon" >Magic Music</span>
       <router-link to="/user" slot="right-icon">
         <i class="icon">&#xe63c;</i>
       </router-link>
-    </v-header>
+    </hd>
     <!-- tab -->
-    <v-tab></v-tab>
-    <!-- 保存上一个路由的停留状态 -->
-    <keep-alive>  
+    <tab></tab>
+    <keep-alive>     <!-- 保留上一个路由的状态 -->
       <router-view></router-view>
     </keep-alive>
     <!-- play -->
-    <v-play></v-play>
+    <play></play>
     <!-- sidebar -->
-    <v-sidebar></v-sidebar>
-   
+    <sidebar></sidebar>
   </div>
 </template>
 
 <script>
-import header from '@/components/header'
+import hd from '@/components/header'
 import tab from '@/components/tab'
 import sidebar from '@/components/sidebar'
 import play from '@/components/play'
+
 export default {
   name: 'App',
-  components: {
-    'v-header': header,
-    'v-tab':tab,
-    'v-sidebar':sidebar,
-    'v-play':play
-  },
+  data() {
+    return {
 
+    }
+  },
+  components: {
+    hd,
+    tab,
+    sidebar,
+    play
+  }
 }
 </script>
 
@@ -50,15 +53,16 @@ export default {
     url("//at.alicdn.com/t/font_kmywdojzhchj8aor.svg#iconfont") format("svg")
 
 .icon
-  font-family "icon" !important
+  font-family "icon" !important 
   font-size 18px
   font-style normal
   color #ffffff
 html,body
   line-height 1
   font-family PingFang SC, STHeitiSC-Light, Helvetica-Light, arial, sans-serif
-  user-select none
-  -webkit-tap-highlight-color transparent
+  user-select none 
+  -webkit-tap-highlight-color transparent  // 点击屏幕高亮
   background rgba(8, 5, 58, 0.9)
   color #fff
 </style>
+
